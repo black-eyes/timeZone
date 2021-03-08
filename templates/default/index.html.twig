@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+
+    {% if(data != null )  %}
+    <div >
+        The time zone {{ data['TimeZone'] }} has {{ data['timeOffsetTOUTC'] }} minutes offset to UTC.<br />
+        February in this year has {{ data['februaryDaysCount'] }} days.<br />
+        Specified month {{ data['nameOfMonth'] }} has {{ data['numberOfDaysOfMonth'] }} days
+    </div>
+    {% endif %}
+    {{ form_start(form) }}
+    {{ form_row(form.date) }}
+    {{ form_row(form.TimeZone) }}
+    <input type="submit" value="send">
+    {{ form_end(form) }}
+{% endblock %}
